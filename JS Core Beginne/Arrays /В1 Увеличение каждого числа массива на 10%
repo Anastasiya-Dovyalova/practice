@@ -1,0 +1,11 @@
+/*Напишите функцию, которая принимает массив с числами и увеличивает каждое
+число из массива на 10 процентов.*/
+
+function increaseArrayValue (arr){
+let modifiedArr=[];
+for (let i = 0; i < arr.length; i++) {
+    modifiedArr.push( arr[i] +  arr[i] /10);
+}
+return modifiedArr;// 1.1, 2.2, 5.5, 5.8795
+}
+let arr= [1, 2, 5, 5.345]
