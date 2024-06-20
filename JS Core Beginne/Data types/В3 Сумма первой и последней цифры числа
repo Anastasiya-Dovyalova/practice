@@ -1,0 +1,11 @@
+/*Напишите функцию, которая принимает число и выводит в консоль
+сумму первой и последней цифры этого числа*/
+
+function calcSum (x) {
+let y = x.toString();
+let first= parseInt( y.at(0));//4
+let last= parseInt( y.at(-1));//1
+let sum = first + last;
+console.log (sum);//5
+}
+let x = 4573647.3231
