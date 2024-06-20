@@ -1,0 +1,22 @@
+/*Создайте класс под названием «Человек» со свойствами имени, возраста и страны.
+Включите метод для отображения сведений о человеке. 
+Создайте два экземпляра класса «Человек» и отобразите их сведения.*/
+
+class Person{
+    constructor(name, age, country) {
+        this.name = name;
+        this.age = age;
+        this.country = country;
+    }
+
+    displayDetails(){
+        console.log('Имя: ',this.name);
+        console.log('Возраст: ',this.age);
+        console.log('Страна: ',this.country);
+    }
+}
+let person1  = new Person ("Иван", 23, 'Беларусь')
+person1.displayDetails();
+
+let person2  = new Person ("Александр", 28, 'Россия')
+person2.displayDetails();
