@@ -1,0 +1,32 @@
+/*Создайте класс «Сотрудник» со свойствами имени и зарплаты. Включите метод расчета
+годовой зарплаты. Создайте подкласс под названием «Менеджер», который наследуется от
+класса «Сотрудник» и добавляет дополнительное свойство для отдела. Переопределить метод 
+расчета годовой зарплаты, чтобы включить бонусы для менеджеров. Создайте два экземпляра
+класса «Менеджер» и рассчитайте их годовую зарплату.*/
+
+class Employee{
+    constructor(name, salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    calcYearSalary(){
+        return this.salary * 12;
+    }
+}
+
+class Manager extends Employee{
+    constructor(name, salary, department) {
+        super(name, salary);
+        this.department = department;
+    }
+    calcYearSalary() {
+       let bonus = this.salary * 0.15;
+       return (this.salary + bonus) * 12;
+    }
+}
+let employer1 = new Manager('Владислав', 3600, 'Коммерческий')
+console.log(employer1.calcYearSalary());//49680
+
+let employer2 = new Manager('Кирилл', 3000,  'Продаж')
+console.log(employer2.calcYearSalary());//41400
+
