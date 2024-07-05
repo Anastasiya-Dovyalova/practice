@@ -1,0 +1,16 @@
+/*Напишите функцию, которая использует async/await для загрузки данных с удаленного
+сервера (например, с помощью API) и возвращает полученный результат.*/
+
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(Ошибка запроса: ${response.status});
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error('Ошибка получения данных:', error);
+    throw error; 
+  }
+}
