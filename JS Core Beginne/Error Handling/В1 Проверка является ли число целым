@@ -1,0 +1,16 @@
+/*Напишите функцию, которая принимает число в качестве параметра и выдает
+пользовательскую ошибку, если число не является целым числом*/
+
+function checkInteger(num) {
+  if (!Number.isInteger(num)) {
+    throw new Error('Число должно быть целым!');
+  }
+  return num;
+}
+
+try {
+  const result = checkInteger(3.14);
+  console.log(result); 
+} catch (error) {
+  console.error(error.message); 
+}
