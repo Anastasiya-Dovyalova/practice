@@ -1,0 +1,28 @@
+/*Напишите функцию, которая сначала загружает данные с одного сервера, а затем
+использует эти данные для выполнения запроса к другому серверу. Используйте
+async/await для обеспечения последовательного выполнения запросов.*/
+
+async function fetchDataFromTwoServers(server1Url, server2Url, dataKey) {
+  try {
+   
+    const response1 = await fetch(server1Url);
+    const data1 = await response1.json();
+
+    
+    const dataToSend = data1[dataKey];
+    const response2 = await fetch(server2Url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ data: dataToSend })
+    });
+
+    const data2 = await response2.json();
+    return data2;
+
+  } catch (error) {
+    console.error('Ошибка получения данных:', error);
+    throw error; 
+  }
+}
