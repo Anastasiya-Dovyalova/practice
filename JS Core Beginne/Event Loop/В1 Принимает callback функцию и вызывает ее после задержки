@@ -1,0 +1,14 @@
+/*Напишите функцию, которая принимает callback функцию и вызывает ее после
+задержки в 2 секунды*/
+
+function delayCallback(callback) {
+  setTimeout(callback, 2000); 
+}
+
+
+function myCallback() {
+  console.log('Вызванная callback функция!');
+}
+
+delayCallback(myCallback); 
+
