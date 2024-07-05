@@ -1,1 +1,18 @@
+/*Напишите функцию, которая многократно выполняет заданную операцию через
+фиксированный интервал, используя setInterval().*/
 
+function repeatOperation(operation, interval) {
+  setInterval(() => {
+    operation();
+  }, interval);
+}
+
+function printHello() {
+  console.log('Hello!');
+}
+
+repeatOperation(printHello, 1000); 
+
+setTimeout(() => {
+  clearInterval(intervalId);
+}, 5000);
